@@ -1,0 +1,974 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>暗黑Rust - BlackRust</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">介绍</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 初探Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="docs/chapter_2.html"><strong aria-hidden="true">1.1.</strong> 部署Rust环境</a></li><li class="chapter-item expanded "><a href="docs/chapter_3.html"><strong aria-hidden="true">1.2.</strong> 在VSCode中配置Rust工程</a></li><li class="chapter-item expanded "><a href="docs/chapter_4.html"><strong aria-hidden="true">1.3.</strong> Hello World</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">2.</strong> Rust基础入门</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="docs/chapter_6.html"><strong aria-hidden="true">2.1.</strong> 变量和重影</a></li><li class="chapter-item expanded "><a href="docs/chapter_7.html"><strong aria-hidden="true">2.2.</strong> 数据类型</a></li><li class="chapter-item expanded "><a href="docs/chapter_8.html"><strong aria-hidden="true">2.3.</strong> 函数</a></li><li class="chapter-item expanded "><a href="docs/chapter_9.html"><strong aria-hidden="true">2.4.</strong> 条件语句</a></li><li class="chapter-item expanded "><a href="docs/chapter_10.html"><strong aria-hidden="true">2.5.</strong> 循环</a></li><li class="chapter-item expanded "><a href="docs/chapter_11.html"><strong aria-hidden="true">2.6.</strong> 所有权</a></li><li class="chapter-item expanded "><a href="docs/chapter_12.html"><strong aria-hidden="true">2.7.</strong> 切片</a></li><li class="chapter-item expanded "><a href="docs/chapter_13.html"><strong aria-hidden="true">2.8.</strong> 结构体</a></li><li class="chapter-item expanded "><a href="docs/chapter_14.html"><strong aria-hidden="true">2.9.</strong> 集合</a></li><li class="chapter-item expanded "><a href="docs/chapter_15.html"><strong aria-hidden="true">2.10.</strong> 错误管理</a></li><li class="chapter-item expanded "><a href="docs/chapter_16.html"><strong aria-hidden="true">2.11.</strong> 组织管理</a></li><li class="chapter-item expanded "><a href="docs/chapter_17.html"><strong aria-hidden="true">2.12.</strong> 泛型</a></li><li class="chapter-item expanded "><a href="docs/chapter_18.html"><strong aria-hidden="true">2.13.</strong> 命令行参数</a></li><li class="chapter-item expanded "><a href="docs/chapter_19.html"><strong aria-hidden="true">2.14.</strong> 猜数字游戏</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_20.html"><strong aria-hidden="true">3.</strong> Rust网络相关</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="request/r1.html"><strong aria-hidden="true">3.1.</strong> Reqwest GET请求</a></li><li class="chapter-item expanded "><a href="request/r2.html"><strong aria-hidden="true">3.2.</strong> Reqwest 字符串匹配</a></li><li class="chapter-item expanded "><a href="request/r3.html"><strong aria-hidden="true">3.3.</strong> Reqwest 发送POST请求（Json数据）</a></li><li class="chapter-item expanded "><a href="request/r4.html"><strong aria-hidden="true">3.4.</strong> Reqwest 发送POST请求（其他数据）</a></li><li class="chapter-item expanded "><a href="request/r5.html"><strong aria-hidden="true">3.5.</strong> Reqwest 请求头</a></li><li class="chapter-item expanded "><a href="request/r6.html"><strong aria-hidden="true">3.6.</strong> Reqwest 超时</a></li></ol></li><li class="chapter-item expanded "><a href="dc1.html"><strong aria-hidden="true">4.</strong> Rust文件处理</a></li><li class="chapter-item expanded "><a href="dc2.html"><strong aria-hidden="true">5.</strong> 使用Rust制作一个扫描器</a></li><li class="chapter-item expanded "><a href="dc3.html"><strong aria-hidden="true">6.</strong> 附录</a></li><li class="chapter-item expanded "><a href="dc4.html"><strong aria-hidden="true">7.</strong> 常用库的使用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">暗黑Rust - BlackRust</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="介绍"><a class="header" href="#介绍">介绍</a></h1>
+<ul>
+<li>
+<p>论坛：<a href="https://www.xxe.one/">https://www.xxe.one/</a></p>
+</li>
+<li>
+<p>本资料网址： <a href="https://blackrust.xxe.one/">https://blackrust.xxe.one/</a></p>
+</li>
+<li>
+<p>修订时间：未完成</p>
+</li>
+<li>
+<p>反馈：请提Issues</p>
+</li>
+</ul>
+<h2 id="简介"><a class="header" href="#简介">简介</a></h2>
+<p>本资料以【黑帽】为切入点，使用Rust开发【渗透测试】所需要的工具。</p>
+<p>在基础教学的同时，我们还有：</p>
+<ul>
+<li>
+<p>模拟项目</p>
+</li>
+<li>
+<p>专题</p>
+</li>
+<li>
+<p>开源库推荐</p>
+</li>
+</ul>
+<h2 id="开源说明"><a class="header" href="#开源说明">开源说明</a></h2>
+<p>我们使用MIT License许可协议。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="初探rust"><a class="header" href="#初探rust">初探Rust</a></h1>
+<blockquote>
+<p>Rust 语言是一种高效、可靠的通用高级语言。其高效不仅限于开发效率，它的执行效率也是令人称赞的，是一种少有的兼顾开发效率和执行效率的语言。</p>
+</blockquote>
+<h2 id=""><a class="header" href="#"><img src="https://cdn.jsdelivr.net/gh/0x0021h/imghost@main/uPic/g2hgv9.jpg" alt="" /></a></h2>
+<h2 id="rust语言的特点"><a class="header" href="#rust语言的特点">Rust语言的特点</a></h2>
+<ul>
+<li>
+<p><strong>高性能</strong> - Rust 速度惊人且内存利用率极高。由于没有运行时和垃圾回收，它能够胜任对性能要求特别高的服务，可以在嵌入式设备上运行，还能轻松和其他语言集成。 </p>
+</li>
+<li>
+<p><strong>可靠性</strong> - Rust 丰富的类型系统和所有权模型保证了内存安全和线程安全，让您在编译期就能够消除各种各样的错误。 </p>
+</li>
+<li>
+<p><strong>生产力</strong> - Rust 拥有出色的文档、友好的编译器和清晰的错误提示信息， 还集成了一流的工具：包管理器和构建工具， 智能地自动补全和类型检验的多编辑器支持， 以及自动格式化代码等等。</p>
+</li>
+</ul>
+<p><strong>Rust</strong> 速度惊人且内存利用率极高。 由于没有运行时和垃圾回收，它能够胜任对性能要求特别高的服务，可以在嵌入式设备上运行，还能轻松和其他语言集成。 <strong>Rust</strong> 丰富的类型系统和所有权模型保证了内存安全和线程安全，让您在编译期就能够消除各种各样的错误。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="部署rust环境"><a class="header" href="#部署rust环境">部署Rust环境</a></h1>
+<h2 id="在-linux-或-macos-上安装-rustup"><a class="header" href="#在-linux-或-macos-上安装-rustup">在 Linux 或 MacOS 上安装 <code>rustup</code></a></h2>
+<pre><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+<h2 id="在其他操作系统安装"><a class="header" href="#在其他操作系统安装">在其他操作系统安装</a></h2>
+<p>请参考官方<a href="https://forge.rust-lang.org/infra/other-installation-methods.html">文档</a>。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="在vscode中配置rust工程"><a class="header" href="#在vscode中配置rust工程">在VSCode中配置Rust工程</a></h1>
+<h2 id="vscode插件推荐"><a class="header" href="#vscode插件推荐">VSCode插件推荐</a></h2>
+<p>搜索Rust，安装最上面两个即可：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/0x0021h/imghost@main/uPic/cN6h02.png" alt="" /></p>
+<p>第一个是官方的Rust，第二个是社区的<code>rust-analyer</code>，许多官方插件的问题在这里得到了解决。</p>
+<h2 id="创建rust工程"><a class="header" href="#创建rust工程">创建Rust工程</a></h2>
+<p>Cargo是一个不错的构建工具，如果使VSCode与它相配合，那么这将会是一个十分便捷的开发环境。</p>
+<pre><code>cargo new HelloWorld
+</code></pre>
+<p>早期的 <code>cargo</code> 在创建项目时，必须添加 <code>--bin</code> 的参数，如下所示：</p>
+<pre><code>cargo new HelloWorld --bin
+</code></pre>
+<p>现在的版本，已经无需此参数，<code>cargo</code> 默认就创建 <code>bin</code> 类型的项目。</p>
+<h2 id="运行项目"><a class="header" href="#运行项目">运行项目</a></h2>
+<pre><code>cargo run
+</code></pre>
+<p>二进制文件在这里：</p>
+<pre><code>./target/debug/
+</code></pre>
+<h2 id="快速检查代码是否存在错误"><a class="header" href="#快速检查代码是否存在错误">快速检查代码是否存在错误</a></h2>
+<pre><code>cargo check
+</code></pre>
+<h2 id="定义项目依赖"><a class="header" href="#定义项目依赖">定义项目依赖</a></h2>
+<p>Cargo.toml文件：</p>
+<pre><code>[dependencies]
+rand = &quot;0.3&quot;
+hammer = { version = &quot;0.5.0&quot;}
+color = { git = &quot;https://github.com/bjz/color-rs&quot; }
+geometry = { path = &quot;crates/geometry&quot; }
+</code></pre>
+<p>将依赖信息添加在这里即可。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hello-world"><a class="header" href="#hello-world">Hello World</a></h1>
+<p>让我们开始编写第一个Rust程序！</p>
+<p>Rust 语言代码文件后缀名为 <code>.rs</code>，如： <code>hello.rs</code></p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    println!(&quot;Hello World!&quot;);
+}
+</code></pre></pre>
+<p>Rust 输出文字的方式主要有两种：<code>println!()</code> 和<code> print!()</code>。这两个函数都是向命令行输出字符串的方法，区别仅在于前者会在输出的最后附加输出一个换行符。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/0x0021h/imghost@main/uPic/5q2uSE.png" alt="" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/0x0021h/imghost@main/uPic/ZeNUAD.png" alt="" /></p>
+<pre><code>cd HelloWorld
+
+
+cargo run
+</code></pre>
+<p>我们可以看到，程序已经程序执行：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/0x0021h/imghost@main/uPic/IbNHJz.png" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rust基础入门"><a class="header" href="#rust基础入门">Rust基础入门</a></h1>
+<p>现在，正式学习Rust！</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="变量和重影"><a class="header" href="#变量和重影">变量和重影</a></h1>
+<h2 id="变量"><a class="header" href="#变量">变量</a></h2>
+<blockquote>
+<p>Rust 是强类型语言，但具有自动判断变量类型的能力。这很容易让人与弱类型语言产生混淆。</p>
+</blockquote>
+<p>如果要声明变量，需要使用 let 关键字：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = 3;
+<span class="boring">}
+</span></code></pre></pre>
+<p>在声明后，以下写法是被禁止的：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span> x = 3.14;
+ x = &quot;Hello&quot;;
+ x = 5;
+<span class="boring">}
+</span></code></pre></pre>
+<p>第一行是因为当声明x后，就被确定为【整型】，不能把字符串类型的值赋给它。</p>
+<p>第二行的错误在于自动转换数字精度有损失，Rust 语言不允许精度有损失的自动数据类型转换。</p>
+<p>第三行的错误在于 a 不是个可变变量。</p>
+<p>如何让变量【可变】？</p>
+<blockquote>
+<p>这只需要一个<code>mut</code>关键字。</p>
+</blockquote>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut x = 3;
+let mut x = 456;
+<span class="boring">}
+</span></code></pre></pre>
+<p>这样写是正确的。</p>
+<h2 id="常量与不可变变量"><a class="header" href="#常量与不可变变量">常量与不可变变量</a></h2>
+<p>在 Rust 中，以下程序是合法的：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let a = 123;
+let a = 456;
+<span class="boring">}
+</span></code></pre></pre>
+<p>但是如果 a 是常量就不合法：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const a: i32 = 123;
+let a = 456;
+<span class="boring">}
+</span></code></pre></pre>
+<p>变量的值可以【重新绑定】，但是在【重新绑定】前不能私自改变。</p>
+<h2 id="重影shadowing"><a class="header" href="#重影shadowing">重影（Shadowing）</a></h2>
+<p>重影就是指变量的名称可以被重新使用的机制：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let x = 86;
+    let x = x + 243;
+    let x = x * 245;
+    println!(&quot;The value of x is: {}&quot;, x);
+}
+</code></pre></pre>
+<p>这个程序可以正常运行。</p>
+<p>重影与可变变量的赋值不是一个概念，重影是指用同一个名字重新代表另一个变量实体。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="数据类型"><a class="header" href="#数据类型">数据类型</a></h1>
+<h2 id="数值类型"><a class="header" href="#数值类型">数值类型</a></h2>
+<h4 id="整数类型"><a class="header" href="#整数类型">整数类型</a></h4>
+<p>下表显示了 Rust 中的内置的整数类型：</p>
+<table><thead><tr><th>长度</th><th>有符号类型</th><th>无符号类型</th></tr></thead><tbody>
+<tr><td>8 位</td><td><code>i8</code></td><td><code>u8</code></td></tr>
+<tr><td>16 位</td><td><code>i16</code></td><td><code>u16</code></td></tr>
+<tr><td>32 位</td><td><code>i32</code></td><td><code>u32</code></td></tr>
+<tr><td>64 位</td><td><code>i64</code></td><td><code>u64</code></td></tr>
+<tr><td>128-位</td><td><code>i128</code></td><td><code>u128</code></td></tr>
+<tr><td>视架构而定</td><td><code>isize</code></td><td><code>usize</code></td></tr>
+</tbody></table>
+<p>整型字面量可以用下表的形式书写：</p>
+<table><thead><tr><th>数字字面量</th><th>示例</th></tr></thead><tbody>
+<tr><td>十进制</td><td><code>98_222</code></td></tr>
+<tr><td>十六进制</td><td><code>0xff</code></td></tr>
+<tr><td>八进制</td><td><code>0o77</code></td></tr>
+<tr><td>二进制</td><td><code>0b1111_0000</code></td></tr>
+<tr><td>字节 (仅限于 <code>u8</code>)</td><td><code>b'A'</code></td></tr>
+</tbody></table>
+<h3 id="浮点类型"><a class="header" href="#浮点类型">浮点类型</a></h3>
+<p>浮点类型数字是带有小数点的数字：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let x = 2.0; // f64
+
+    let y: f32 = 3.0; // f32
+}
+</code></pre></pre>
+<p>浮点数根据 <code>IEEE-754</code> 标准实现。<code>f32</code> 类型是单精度浮点型，<code>f64</code> 为双精度。</p>
+<h2 id="数字运算"><a class="header" href="#数字运算">数字运算</a></h2>
+<p>Rust 支持所有数字类型的基本数学运算：加法、减法、乘法、除法和取模运算。下面代码各使用一条 <code>let</code> 语句来说明相应运算的用法：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // 加法
+    let sum = 5 + 10;
+
+    // 减法
+    let difference = 95.5 - 4.3;
+
+    // 乘法
+    let product = 4 * 30;
+
+    // 除法
+    let quotient = 56.7 / 32.2;
+
+    // 求余
+    let remainder = 43 % 5;
+}
+</code></pre></pre>
+<h2 id="字符类型char"><a class="header" href="#字符类型char">字符类型(char)</a></h2>
+<p>下面的代码展示了几个颇具异域风情的字符：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let c = 'z';
+    let z = 'ℤ';
+    let g = '国';
+    let heart_eyed_cat = '😻';
+}
+
+</code></pre></pre>
+<h2 id="布尔bool"><a class="header" href="#布尔bool">布尔(bool)</a></h2>
+<p>Rust 中的布尔类型有两个可能的值：<code>true</code> 和 <code>false</code>, 布尔值占用内存的大小为 <code>1</code> 个字节：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let t = true;
+
+    let f: bool = false; // 使用类型标注,显式指定f的类型
+
+    if f {
+        println!(&quot;这是段毫无意义的代码&quot;);
+    }
+}
+</code></pre></pre>
+<p>使用布尔类型的场景主要在于流程控制，例如上述代码的中的 <code>if</code> 就是其中之一。</p>
+<h2 id="单元类型"><a class="header" href="#单元类型">单元类型</a></h2>
+<p>单元类型就是 <code>()</code> ，对，你没看错，就是 <code>()</code> ，唯一的值也是 <code>()</code> ，一些读者读到这里可能就不愿意了，你也太敷衍了吧，管这叫类型？</p>
+<p>只能说，再不起眼的东西，都有其用途，在目前为止的学习过程中，大家已经看到过很多次 <code>fn main()</code> 函数的使用吧？那么这个函数返回什么呢？</p>
+<p>没错， <code>main</code> 函数就返回这个单元类型 <code>()</code>，你不能说 <code>main</code> 函数无返回值，因为没有返回值的函数在 Rust 中是有单独的定义的：<code>发散函数</code>，顾名思义，无法收敛的函数。</p>
+<p>例如常见的 <code>println!()</code> 的返回值也是单元类型 <code>()</code>。</p>
+<p>再比如，你可以用 <code>()</code> 作为 <code>map</code> 的值，表示我们不关注具体的值，只关注 <code>key</code>。 这种用法和 Go 语言的 <em><strong>struct{}</strong></em> 类似，可以作为一个值用来占位，但是完全<strong>不占用</strong>任何内存。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="函数"><a class="header" href="#函数">函数</a></h1>
+<h2 id="函数的基本形式"><a class="header" href="#函数的基本形式">函数的基本形式</a></h2>
+<pre><code>fn &lt;函数名&gt; ( &lt;参数&gt; ) &lt;函数体&gt;
+</code></pre>
+<p>示例：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    println!(&quot;Wow,Rust!&quot;);
+    ans_function();
+}
+
+fn ans_function() {
+    println!(&quot;Aha...Rust?&quot;);
+}
+</code></pre></pre>
+<p>我们在<code>main</code>函数中调用了<code>ans_function</code>函数，程序输出如下：</p>
+<pre><code>Wow,Rust!
+Aha...Rust?
+</code></pre>
+<h2 id="函数参数"><a class="header" href="#函数参数">函数参数</a></h2>
+<p>Rust 是强类型语言，因此需要你为每一个函数参数都标识出它的具体类型，例如：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    another_function(5, 6.1);
+}
+
+fn another_function(x: i32, y: f32) {
+    println!(&quot;The value of x is: {}&quot;, x);
+    println!(&quot;The value of y is: {}&quot;, y);
+}
+</code></pre></pre>
+<p><code>another_function</code> 函数有两个参数，其中 <code>x</code> 是 <code>i32</code> 类型，<code>y</code> 是 <code>f32</code> 类型，然后在该函数内部，打印出这两个值。这里去掉 <code>x</code> 或者 <code>y</code> 的任何一个的类型，都会报错：</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    another_function(5, 6.1);
+}
+
+fn another_function(x: i32, y) {
+    println!(&quot;The value of x is: {}&quot;, x);
+    println!(&quot;The value of y is: {}&quot;, y);
+}
+</code></pre></pre>
+<p>错误如下：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>error: expected one of `:`, `@`, or `|`, found `)`
+ --&gt; src/main.rs:5:30
+  |
+5 | fn another_function(x: i32, y) {
+  |                              ^ expected one of `:`, `@`, or `|` // 期待以下符号之一 `:`, `@`, or `|` 
+  |
+  = note: anonymous parameters are removed in the 2018 edition (see RFC 1685)
+    // 匿名参数在 Rust 2018 edition 中就已经移除
+help: if this is a parameter name, give it a type // 如果y是一个参数名，请给予它一个类型
+  |
+5 | fn another_function(x: i32, y: TypeName) {
+  |                             ~~~~~~~~~~~
+help: if this is a type, explicitly ignore the parameter name // 如果y是一个类型，请使用_忽略参数名
+  |
+5 | fn another_function(x: i32, _: y) {
+  |                             ~~~~
+
+<span class="boring">}
+</span></code></pre></pre>
+<h3 id="函数返回值"><a class="header" href="#函数返回值">函数返回值</a></h3>
+<p>在函数体中，随时都可以以 return 关键字结束函数运行并返回一个类型合适的值。这也是最接近大多数开发者经验的做法：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn add(a: i32, b: i32) -&gt; i32 {
+    return a + b;
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>注意：<strong>函数体表达式并不能等同于函数体，它不能使用 return关键字</strong>。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="条件语句"><a class="header" href="#条件语句">条件语句</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="reqwest-get请求"><a class="header" href="#reqwest-get请求">Reqwest GET请求</a></h1>
+<h2 id="发起get请求"><a class="header" href="#发起get请求">发起GET请求</a></h2>
+<p>首先，我们需要在<code>cargo.toml</code>添加：</p>
+<pre><code>[dependencies]
+reqwest = { version = &quot;0.11&quot;, features = [&quot;json&quot;] } # reqwest with JSON parsing support
+futures = &quot;0.3&quot; # for our async / await blocks
+tokio = { version = &quot;1.12.0&quot;, features = [&quot;full&quot;] } # for our async runtime
+</code></pre>
+<p>尝试请求Spotify的API：</p>
+<pre><pre class="playground"><code class="language-rust">use reqwest;
+
+// tokio let's us use &quot;async&quot; on our main function
+#[tokio::main]
+async fn main() {
+    // chaining .await will yield our query result
+    let result = reqwest::get(&quot;https://api.spotify.com/v1/search&quot;).await
+}
+</code></pre></pre>
+<p>好的，打印输出看看：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>println!(&quot;{:?}&quot;, result)
+
+// 👉 Ok(Response { url: Url { scheme: &quot;https&quot;, cannot_be_a_base: false, username: &quot;&quot;, password: None, host: Some(Domain(&quot;api.spotify.com&quot;)), port: None, path: &quot;/v1/search&quot;, query: None, fragment: None }, status: 401, headers: {&quot;www-authenticate&quot;: &quot;Bearer realm=\&quot;spotify\&quot;&quot;, &quot;access-control-allow-origin&quot;: &quot;*&quot;, &quot;access-control-allow-headers&quot;: &quot;Accept, App-Platform, Authorization...
+<span class="boring">}
+</span></code></pre></pre>
+<p>嗯，我们收到的数据比预期的要多。</p>
+<h2 id="statuscode匹配"><a class="header" href="#statuscode匹配">StatusCode匹配</a></h2>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>match response.status() {
+    reqwest::StatusCode::OK =&gt; {
+        println!(&quot;Success! {:?}&quot;);
+    },
+    reqwest::StatusCode::UNAUTHORIZED =&gt; {
+        println!(&quot;Need to grab a new token&quot;);
+    },
+    _ =&gt; {
+        panic!(&quot;Uh oh! Something unexpected happened.&quot;);
+    },
+};
+<span class="boring">}
+</span></code></pre></pre>
+<h2 id="解析响应正文"><a class="header" href="#解析响应正文">解析响应正文</a></h2>
+<p>我们需要指定函数<code>.text()</code>。</p>
+<pre><pre class="playground"><code class="language-rust">#[tokio::main]
+async fn main() {
+    let response = reqwest::get(&quot;https://api.spotify.com/v1/search&quot;)
+        .await
+        // each response is wrapped in a `Result` type
+        // we'll unwrap here for simplicity
+        .unwrap()
+        .text()
+        .await;
+    println!(&quot;{:?}&quot;, response);
+}
+// 👉 Ok(&quot;{\n  \&quot;error\&quot;: {\n    \&quot;status\&quot;: 401,\n    \&quot;message\&quot;: \&quot;No token provided\&quot;\n  }\n}&quot;)
+</code></pre></pre>
+<p>回应401，这很正常，因为没有提供Token。</p>
+<p>将内容类型指定为标题：</p>
+<pre><pre class="playground"><code class="language-rust">#[tokio::main]
+async fn main() {
+    let client = reqwest::Client::new();
+    let response = client
+        .get(&quot;https://api.spotify.com/v1/search&quot;)
+        // confirm the request using send()
+        .send()
+        .await
+        // the rest is the same!
+        .unwrap()
+        .text()
+        .await;
+    println!(&quot;{:?}&quot;, response);
+}
+</code></pre></pre>
+<p>现在我们有了<code>client</code>，可添加Header：</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let response = client
+    .get(&quot;https://api.spotify.com/v1/search&quot;)
+    .header(AUTHORIZATION, &quot;Bearer [AUTH_TOKEN]&quot;)
+    .header(CONTENT_TYPE, &quot;application/json&quot;)
+    .header(ACCEPT, &quot;application/json&quot;)
+    .send()
+    ...
+<span class="boring">}
+</span></code></pre></pre>
+<p><code>[AUTH_TOKEN]</code>需要替换为您的Token。</p>
+<p>得到一个错误<code>400 bad request</code>，而不是 401。这是因为我们还没有指定要搜索的内容。</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let url = format!(
+    &quot;https://api.spotify.com/v1/search?q={query}&amp;type=track,artist&quot;,
+    // go check out her latest album. It's 🔥
+    query = &quot;Little Simz&quot;
+);
+// the rest is the same as before!
+let client = reqwest::Client::new();
+let response = client
+    .get(url)
+    .header(AUTHORIZATION, &quot;Bearer [AUTH_TOKEN]&quot;)
+    .header(CONTENT_TYPE, &quot;application/json&quot;)
+    .header(ACCEPT, &quot;application/json&quot;)
+    .send()
+    .await
+    .unwrap();
+println!(&quot;Success! {:?}&quot;, response)
+// 👉 Ok(&quot;{\n  \&quot;artists\&quot; : {\n    \&quot;href\&quot; : \&quot;https://api.spotify.com/v1/search?query=Lil+Simz&amp;type=artist&amp;offset=0&amp;limit=20\&quot;,\n    \&quot;items\&quot; : [ {\n      \&quot;external_urls\&quot;...
+<span class="boring">}
+</span></code></pre></pre>
+<h2 id="反序列化为json"><a class="header" href="#反序列化为json">反序列化为Json</a></h2>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize, Debug)]
+struct ExternalUrls {
+    spotify: String,
+}
+#[derive(Serialize, Deserialize, Debug)]
+struct Artist {
+    name: String,
+    external_urls: ExternalUrls,
+}
+#[derive(Serialize, Deserialize, Debug)]
+struct Album {
+    name: String,
+    artists: Vec&lt;Artist&gt;,
+    external_urls: ExternalUrls,
+}
+#[derive(Serialize, Deserialize, Debug)]
+struct Track {
+    name: String,
+    href: String,
+    popularity: u32,
+    album: Album,
+    external_urls: ExternalUrls,
+}
+#[derive(Serialize, Deserialize, Debug)]
+struct Items&lt;T&gt; {
+    items: Vec&lt;T&gt;,
+}
+#[derive(Serialize, Deserialize, Debug)]
+struct APIResponse {
+    tracks: Items&lt;Track&gt;,
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>添加serde：</p>
+<pre><code>[dependencies]
+...
+serde = { version = &quot;1.0&quot;, features = [&quot;derive&quot;] }
+serde_json = &quot;1.0&quot;
+</code></pre>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let response = client
+    .get(url)
+    ...
+match response.status() {
+    reqwest::StatusCode::OK =&gt; {
+        // on success, parse our JSON to an APIResponse
+        match response.json::&lt;APIResponse&gt;().await {
+            Ok(parsed) =&gt; println!(&quot;Success! {:?}&quot;, parsed),
+            Err(_) =&gt; println!(&quot;Hm, the response didn't match the shape we expected.&quot;),
+        };
+    }
+    reqwest::StatusCode::UNAUTHORIZED =&gt; {
+        println!(&quot;Need to grab a new token&quot;);
+    }
+    other =&gt; {
+        panic!(&quot;Uh oh! Something unexpected happened: {:?}&quot;, other);
+    }
+<span class="boring">}
+</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reqwest-字符串匹配"><a class="header" href="#reqwest-字符串匹配">Reqwest 字符串匹配</a></h1>
+<blockquote>
+<p>使用<code>.query</code>即可。</p>
+</blockquote>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let client = reqwest::Client::builder()
+    .build()?;
+
+let res = client
+    .get(&quot;http://httpbin.org&quot;)
+    .query(&amp;[(&quot;foo&quot;, &quot;bar&quot;)])
+    .send()?;
+<span class="boring">}
+</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reqwest-发送post请求json数据"><a class="header" href="#reqwest-发送post请求json数据">Reqwest 发送POST请求（Json数据）</a></h1>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut map = HashMap::new();
+map.insert(&quot;foo&quot;, &quot;bar&quot;);
+map.insert(&quot;buzz&quot;, &quot;blah&quot;);
+
+...
+.json(&amp;map) 
+<span class="boring">}
+</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+
+#[derive(Debug, Serialize, Deserialize)]
+struct Person {
+    first_name: String,
+    last_name: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct PersonResponse {
+    data: String,
+    method: String,
+    headers: HashMap&lt;String, String&gt;
+}
+
+#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+    let p = Person { 
+        first_name: &quot;Foo&quot;.into(),
+        last_name: &quot;Bar&quot;.into(),
+    };
+
+    let res = reqwest::Client::new()
+        .post(&quot;https://httpbin.org/anything&quot;)
+        .json(&amp;p)
+        .send()
+        .await?;
+
+    let js = res
+        .json::&lt;PersonResponse&gt;()
+        .await?;
+
+    let person: Person = serde_json::from_str(&amp;js.data)?;
+    println!(&quot;{:#?}&quot;, person);
+
+    println!(&quot;Headers: {:#?}&quot;, js.headers);
+    Ok(())
+}
+
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reqwest-发送post请求其他数据"><a class="header" href="#reqwest-发送post请求其他数据">Reqwest 发送POST请求（其他数据）</a></h1>
+<pre><pre class="playground"><code class="language-rust">use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Serialize, Deserialize)]
+struct Person {
+    first_name: String,
+    last_name: String,
+}
+
+#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+    let p = Person { 
+        first_name: &quot;Foo&quot;.into(),
+        last_name: &quot;Bar&quot;.into(),
+    };
+
+    let res = reqwest::Client::new()
+        .post(&quot;https://httpbin.org/anything&quot;)
+        .form(&amp;p)
+        .send()
+        .await?;
+
+    let t = res
+        .text()
+        .await?;
+
+    println!(&quot;{}&quot;, t);
+
+//  $ cargo run
+//      Finished dev [unoptimized + debuginfo] target(s) in 0.09s
+//       Running `target/debug/reqwest-tut`
+//  {
+//    &quot;args&quot;: {}, 
+//    &quot;data&quot;: &quot;&quot;, 
+//    &quot;files&quot;: {}, 
+//    &quot;form&quot;: {
+//      &quot;first_name&quot;: &quot;Foo&quot;, 
+//      &quot;last_name&quot;: &quot;Bar&quot;
+//    }, 
+//    &quot;headers&quot;: {
+//      &quot;Accept&quot;: &quot;*/*&quot;, 
+//      &quot;Content-Length&quot;: &quot;28&quot;, 
+//      &quot;Content-Type&quot;: &quot;application/x-www-form-urlencoded&quot;, 
+//      &quot;Host&quot;: &quot;httpbin.org&quot;, 
+//      &quot;X-Amzn-Trace-Id&quot;: &quot;Root=1-60453174-384d97870199933007fbb388&quot;
+//    }, 
+//    &quot;json&quot;: null, 
+//    &quot;method&quot;: &quot;POST&quot;, 
+//    &quot;origin&quot;: &quot;125.125.104.53&quot;, 
+//    &quot;url&quot;: &quot;https://httpbin.org/anything&quot;
+//  }
+//  
+//  
+    Ok(())
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reqwest-请求头"><a class="header" href="#reqwest-请求头">Reqwest 请求头</a></h1>
+<blockquote>
+<p>使用<code>header(..,..)</code>方法即可。</p>
+</blockquote>
+<pre><pre class="playground"><code class="language-rust">#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+    let client = reqwest::Client::builder()
+        .build()?;
+
+    let res = client
+        .post(&quot;https://httpbin.org/anything&quot;)
+        .body(&quot;arbitrary text&quot;)
+        .header(&quot;X-Person-First&quot;, &quot;Foo!&quot;)
+        .header(&quot;X-Person-Last&quot;, &quot;Bar!!&quot;)
+        .send()
+        .await?;
+
+    let t = res
+        .text()
+        .await?;
+
+    println!(&quot;{}&quot;, t);
+// {
+//   &quot;args&quot;: {}, 
+//   &quot;data&quot;: &quot;arbitrary text&quot;, 
+//   &quot;files&quot;: {}, 
+//   &quot;form&quot;: {}, 
+//   &quot;headers&quot;: {
+//     &quot;Accept&quot;: &quot;*/*&quot;, 
+//     &quot;Content-Length&quot;: &quot;14&quot;, 
+//     &quot;Host&quot;: &quot;httpbin.org&quot;, 
+//     &quot;X-Amzn-Trace-Id&quot;: &quot;Root=1-604538df-218a5bb97264e7130c298b23&quot;, 
+//     &quot;X-Person-First&quot;: &quot;Foo!&quot;, 
+//     &quot;X-Person-Last&quot;: &quot;Bar!!&quot;
+//   }, 
+//   &quot;json&quot;: null, 
+//   &quot;method&quot;: &quot;POST&quot;, 
+//   &quot;origin&quot;: &quot;49.206.4.160&quot;, 
+//   &quot;url&quot;: &quot;https://httpbin.org/anything&quot;
+// }
+
+    Ok(())
+}
+</code></pre></pre>
+<h2 id="默认请求头"><a class="header" href="#默认请求头">默认请求头</a></h2>
+<pre><pre class="playground"><code class="language-rust">use reqwest::header;
+
+#[tokio::main]
+async fn main() -&gt; Result&lt;(), reqwest::Error&gt; {
+    let mut headers = header::HeaderMap::new();
+    headers.insert(&quot;X-HEADER-1&quot;, header::HeaderValue::from_static(&quot;val1&quot;));
+    headers.insert(&quot;X-HEADER-2&quot;, header::HeaderValue::from_static(&quot;val2&quot;));
+
+    let client = reqwest::Client::builder()
+        .default_headers(headers)
+        .build()?;
+
+    let res = client
+        .get(&quot;https://httpbin.org/anything&quot;)
+        .body(&quot;whatever&quot;)
+        .header(&quot;X-HEADER-1&quot;, &quot;overriden val1&quot;)
+        .send()
+        .await?;
+
+    println!(&quot;{}&quot;, res.text().await?);
+
+    // {
+    //   &quot;args&quot;: {},
+    //   &quot;data&quot;: &quot;whatever&quot;,
+    //   &quot;files&quot;: {},
+    //   &quot;form&quot;: {},
+    //   &quot;headers&quot;: {
+    //     &quot;Accept&quot;: &quot;*/*&quot;,
+    //     &quot;Content-Length&quot;: &quot;8&quot;,
+    //     &quot;Host&quot;: &quot;httpbin.org&quot;,
+    //     &quot;X-Amzn-Trace-Id&quot;: &quot;Root=1-60453dad-429e59a434bd460b0a48e7d5&quot;,
+    //     &quot;X-Header-1&quot;: &quot;overriden val1&quot;,
+    //     &quot;X-Header-2&quot;: &quot;val2&quot;
+    //   },
+    //   &quot;json&quot;: null,
+    //   &quot;method&quot;: &quot;GET&quot;,
+    //   &quot;origin&quot;: &quot;49.206.4.160&quot;,
+    //   &quot;url&quot;: &quot;https://httpbin.org/anything&quot;
+    // }
+
+    Ok(())
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reqwest-超时"><a class="header" href="#reqwest-超时">Reqwest 超时</a></h1>
+<h2 id="client-timeout"><a class="header" href="#client-timeout">Client Timeout</a></h2>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let client = reqwest::Client::builder()
+    .timeout(std::time::Duration::from_millis(500))
+    .build()?;
+
+<span class="boring">}
+</span></code></pre></pre>
+<h2 id="connect-timeout"><a class="header" href="#connect-timeout">Connect Timeout</a></h2>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let client = reqwest::Client::builder()
+    .connect_timeout(std::time::Duration::from_millis(100))
+    .build()?;
+<span class="boring">}
+</span></code></pre></pre>
+<h2 id="request-timeout"><a class="header" href="#request-timeout">Request Timeout</a></h2>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let res = client
+    .get(&amp;url)
+    .timeout(std::time::Duration::from_millis(500))
+    .send()
+    .await;
+<span class="boring">}
+</span></code></pre></pre>
+<h2 id="download-data"><a class="header" href="#download-data">Download data</a></h2>
+<pre><pre class="playground"><code class="language-rust">use std::fs::File;
+use std::io;
+
+#[tokio::main]
+async fn main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+    let client = reqwest::Client::builder().build()?;
+
+    let res = client
+        .get(&quot;https://httpbin.org/image/png&quot;)
+        .send()
+        .await?
+        .bytes()
+        .await?;
+
+    let mut data = res.as_ref();
+
+    let mut f = File::create(&quot;i.png&quot;)?;
+
+    io::copy(&amp;mut data, &amp;mut f)?;
+
+    Ok(())
+}
+
+// $ file i.png 
+// i.png: PNG image data, 100 x 100, 8-bit/color RGB, non-interlaced 
+</code></pre></pre>
+<h5 id="dependency-configuration-for-the-samples"><a class="header" href="#dependency-configuration-for-the-samples">Dependency configuration for the samples</a></h5>
+<pre><code>[dependencies]
+reqwest = { version = &quot;0.11&quot;, features = [&quot;json&quot;, &quot;blocking&quot;, &quot;cookies&quot;] }
+tokio = { version = &quot;1&quot;, features = [&quot;full&quot;] }
+serde = { version = &quot;1&quot;, features = [&quot;derive&quot;] }
+serde_json = &quot;1.0&quot; 
+futures = &quot;0.3&quot;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rust文件处理"><a class="header" href="#rust文件处理">Rust文件处理</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rust文件处理-1"><a class="header" href="#rust文件处理-1">Rust文件处理</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="附录"><a class="header" href="#附录">附录</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="常用库的使用"><a class="header" href="#常用库的使用">常用库的使用</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>
